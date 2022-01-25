@@ -10,6 +10,8 @@ import Main from './Main';
 function App() {
   //creo una variable de estado para guardar el array del fecth
   const [characterData, setCharacterData] = useState([]);
+  //creo una variable estado para el input
+  const [searchInput, setSearchInput] = useState('');
 
   //fecth
   useEffect(() => {
@@ -17,12 +19,25 @@ function App() {
       setCharacterData(data);
     });
   }, []);
-  console.log(characterData)
+
+  const handleFilter = (data) => {
+    if (data.key === 'name') {
+      setSearchInput(data.value);
+    }
+  };
+
+  const filteredCharacter = characterData.filter((character) => {
+    return character.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
 
   return (
     <div>
       <Header />
-      <Main character={characterData}/>
+      <Main
+        character={filteredCharacter}
+        searchInput={searchInput}
+        handleFilter={handleFilter}
+      />
     </div>
   );
 }

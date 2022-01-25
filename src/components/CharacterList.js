@@ -1,9 +1,9 @@
 import Character from './Character';
-
+import List from '../styles/layout/List.scss';
 function CharacterList(props) {
   const characterElement = props.character.map((character, index) => {
     return (
-      <li key={index}>
+      <li key={index} className="list_character">
         <Character data={character} />
       </li>
     );
@@ -11,7 +11,7 @@ function CharacterList(props) {
 
   return (
     <section>
-      <ul>{characterElement}</ul>
+      <ul className="list">{characterElement}</ul>
     </section>
   );
 }

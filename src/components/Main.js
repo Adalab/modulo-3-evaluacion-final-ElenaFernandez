@@ -5,8 +5,9 @@ function Main(props) {
   return (
     <>
       <Filters
-        searchInput={props.searchInput}
+        filterName={props.filterName}
         handleFilter={props.handleFilter}
+        filterHouse={props.filterHouse}
       />
       <CharacterList character={props.character} />
     </>

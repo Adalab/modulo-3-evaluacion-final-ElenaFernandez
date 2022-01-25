@@ -11,23 +11,27 @@ function App() {
   //creo una variable de estado para guardar el array del fecth
   const [characterData, setCharacterData] = useState([]);
   //creo una variable estado para el input
-  const [searchInput, setSearchInput] = useState('');
+  const [filterName, setFilterName] = useState('');
+  //creo una variable estado para filtar por casa
+  const [filterHouse, setFilterHouse] = useState('gryffindor');
 
   //fecth
   useEffect(() => {
-    callToApi().then((data) => {
+    callToApi(filterHouse).then((data) => {
       setCharacterData(data);
     });
-  }, []);
+  }, [filterHouse]);
 
   const handleFilter = (data) => {
     if (data.key === 'name') {
-      setSearchInput(data.value);
+      setFilterName(data.value);
+    }else if(data.key=== 'house'){
+      setFilterHouse(data.value)
     }
   };
 
   const filteredCharacter = characterData.filter((character) => {
-    return character.name.toLowerCase().includes(searchInput.toLowerCase());
+    return character.name.toLowerCase().includes(filterName.toLowerCase());
   });
 
   return (
@@ -35,8 +39,9 @@ function App() {
       <Header />
       <Main
         character={filteredCharacter}
-        searchInput={searchInput}
+        filterName={filterName}
         handleFilter={handleFilter}
+        filterHouse={filterHouse}
       />
     </div>
   );

@@ -1,3 +1,4 @@
+import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 
 function Filters(props) {
@@ -5,15 +6,12 @@ function Filters(props) {
     <form>
       <FilterName
         handleFilter={props.handleFilter}
-        searchInput={props.searchInput}
+        filterName={props.filterName}
       />
-      <label htmlFor="house">Selecciona la casa:</label>
-      <select name="house" id="house">
-        <option value="gryffindor">Gryffindor</option>
-        <option value="hufflepuff">Hufflepuff</option>
-        <option value="ravenclaw">Ravenclaw</option>
-        <option value="slytherin">Slytherin</option>
-      </select>
+      <FilterHouse
+        handleFilter={props.handleFilter}
+        filterHouse={props.filterHouse}
+      />
     </form>
   );
 }

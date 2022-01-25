@@ -1,6 +1,6 @@
 // Fichero src/services/api.js
-const callToApi = () => {
-  return fetch('http://hp-api.herokuapp.com/api/characters/house/gryffindor')
+const callToApi = (filterHouse) => {
+  return fetch(`http://hp-api.herokuapp.com/api/characters/house/${filterHouse}`)
     .then((response) => response.json())
     .then((data) => {
       // Cuando responde el API podemos limpiar los datos aquí

@@ -12,7 +12,7 @@ function FilterName(props) {
         type="text"
         placeholder="Ej:Voldemort."
         onChange={handleInput}
-        value={props.searchInput}
+        value={props.filterName}
       />
     </>
   );

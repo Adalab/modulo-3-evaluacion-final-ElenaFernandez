@@ -35,7 +35,7 @@ function App() {
   });
 
   return (
-    <div>
+    <div className='appPage'>
       <Header />
       <Main
         character={filteredCharacter}

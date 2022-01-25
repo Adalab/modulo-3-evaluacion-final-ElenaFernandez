@@ -8,7 +8,12 @@ function FilterHouse(props) {
   return (
     <>
       <label htmlFor="house">Selecciona la casa:</label>
-      <select name="house" id="house" onChange={handleChangeHouse} value={props.filterHouse}>
+      <select
+        name="house"
+        id="house"
+        onChange={handleChangeHouse}
+        value={props.filterHouse}
+      >
         <option value="gryffindor">Gryffindor</option>
         <option value="hufflepuff">Hufflepuff</option>
         <option value="ravenclaw">Ravenclaw</option>

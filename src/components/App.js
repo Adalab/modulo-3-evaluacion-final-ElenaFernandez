@@ -1,13 +1,16 @@
 
 import '../styles/App.scss';
 import callToApi from '../services/api';
-import ls from '../services/localStorage';
-import PropTypes from 'prop-types';
+import Header from './Header';
+import Main from './Main';
+//import ls from '../services/localStorage';
+//import PropTypes from 'prop-types';
 
 function App() {
   return (
     <div>
-      <h1>Hola mundo</h1>
+     <Header/>
+     <Main/>
     </div>
   );
 }

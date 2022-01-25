@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-//import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
+import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
 import '../styles/App.scss';
 import callToApi from '../services/api';
 import Header from './Header';
@@ -25,8 +25,8 @@ function App() {
   const handleFilter = (data) => {
     if (data.key === 'name') {
       setFilterName(data.value);
-    }else if(data.key=== 'house'){
-      setFilterHouse(data.value)
+    } else if (data.key === 'house') {
+      setFilterHouse(data.value);
     }
   };
 
@@ -35,14 +35,21 @@ function App() {
   });
 
   return (
-    <div className='appPage'>
+    <div className="appPage">
       <Header />
-      <Main
-        character={filteredCharacter}
-        filterName={filterName}
-        handleFilter={handleFilter}
-        filterHouse={filterHouse}
-      />
+      <Switch>
+        <Route path="/" exact>
+          <div>
+            <Main
+              character={filteredCharacter}
+              filterName={filterName}
+              handleFilter={handleFilter}
+              filterHouse={filterHouse}
+            />
+          </div>
+        </Route>
+        <Route path="/character/"></Route>{' '}
+      </Switch>
     </div>
   );
 }

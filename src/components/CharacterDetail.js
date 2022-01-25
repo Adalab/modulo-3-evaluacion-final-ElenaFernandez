@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import { Link } from 'react-router-dom';
 
 function CharacterDetail(props) {
@@ -5,7 +6,7 @@ function CharacterDetail(props) {
     return props.data.gender === 'female' ? 'Mujer' : 'Hombre';
   };
 
-  const istAlive = (props) => {
+  const renderStatus = (props) => {
     if (props.data.alive) {
       if (props.data.gender === 'female') {
         return 'Viva';
@@ -30,7 +31,7 @@ function CharacterDetail(props) {
         title={`Foto de ${props.data.name}`}
       />
       <h4>{props.data.name}</h4>
-      <p>Estatus: {istAlive()}</p>
+      <p>Estatus: {renderStatus()}</p>
       <p>Especie: {props.data.species}</p>
       <p>Género:{getGender()}</p>
       <p>Casa:{props.data.house}</p>

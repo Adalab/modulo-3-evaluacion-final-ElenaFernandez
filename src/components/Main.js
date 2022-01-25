@@ -1,4 +1,6 @@
-function Main() {
+import CharacterList from "./CharacterList";
+
+function Main(props) {
   return (
     <>
       <form>
@@ -12,11 +14,7 @@ function Main() {
           <option value="slytherin">Slytherin</option>
         </select>
       </form>
-      <ul>
-          <li>
-              
-          </li>
-      </ul>
+      <CharacterList character={props.character}/>
     </>
   );
 }

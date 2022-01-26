@@ -8,9 +8,9 @@ function CharacterDetail(props) {
 
   const renderStatus = () => {
     if (props.data.alive) {
-      if (props.data.gender === 'female') {
-        return 'Viva';
-        //favicon viva
+      if (props.data.gender === 'female' ) {
+        return 'Viva'
+        
       } else {
         return 'Vivo';
         //favicon viva
@@ -49,7 +49,7 @@ function CharacterDetail(props) {
           title={`Foto de ${props.data.name}`}
         />
         <h4>{props.data.name}</h4>
-        <p>Estatus: {renderStatus()}</p>
+        <p>Estatus: {renderStatus()}{props.data.alive ? <i className="fa-solid fa-heart-pulse"></i> : <i className="fa-duotone fa-skull-crossbones"></i>}</p>
         <p>
           Especie:{' '}
           {props.data.species === 'human' ? 'Humano' : `${renderSpecies()}`}

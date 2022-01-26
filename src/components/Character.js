@@ -5,7 +5,8 @@ function Character(props) {
     <>
       <Link to={`/character/${props.data.id}`}>
         <img
-          src={props.data.image}
+          className="image"
+          src={props.data.image ? props.data.image : ('https://lafrikileria.com/71944-thickbox_default/funko-pop-gigante-harry-potter-y-hedwig-45-cm-xxl.jpg') }
           alt={`Foto de ${props.data.name}`}
           title={`Foto de ${props.data.name}`}
         />

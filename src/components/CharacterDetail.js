@@ -10,17 +10,32 @@ function CharacterDetail(props) {
     if (props.data.alive) {
       if (props.data.gender === 'female') {
         return 'Viva';
+        //favicon viva
       } else {
         return 'Vivo';
+        //favicon viva
       }
     } else if (!props.data.alive) {
       if (props.data.gender === 'female') {
         return 'Muerta';
+        //favicon muerta
       } else {
         return 'Muerto';
+        //favicon viva
       }
     }
   };
+
+  const renderSpecies = () => {
+    if (props.data.species === 'half-giant') {
+      return 'Semi-gigante';
+    } else if (props.data.species === 'werewolf') {
+      return 'Hombre-lobo';
+    } else if (props.data.species === 'ghost') {
+      return 'Fantasma';
+    }
+  };
+
   return (
     <>
       <Link to="/">
@@ -35,7 +50,10 @@ function CharacterDetail(props) {
         />
         <h4>{props.data.name}</h4>
         <p>Estatus: {renderStatus()}</p>
-        <p>Especie: {props.data.species}</p>
+        <p>
+          Especie:{' '}
+          {props.data.species === 'human' ? 'Humano' : `${renderSpecies()}`}
+        </p>
         <p>Género:{getGender()}</p>
         <p>Casa:{props.data.house}</p>
       </section>

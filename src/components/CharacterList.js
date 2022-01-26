@@ -11,9 +11,9 @@ function CharacterList(props) {
   });
 
   return (
-    <section>
+    <div className="container-list">
       <ul className="list">{characterElement}</ul>
-    </section>
+    </div>
   );
 }
 

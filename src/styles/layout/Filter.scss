@@ -1,0 +1,22 @@
+.container-form {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.filter-name {
+  padding-right: 5px;
+  &__input {
+    border-radius: 5px;
+  }
+}
+.filter-gender {
+  margin-left: 5px;
+  margin-right: 3px;
+  &__select {
+    padding-right: 5px;
+  }
+}
+.filter-house {
+  margin-left: 5px;
+  margin-right: 5px;
+}

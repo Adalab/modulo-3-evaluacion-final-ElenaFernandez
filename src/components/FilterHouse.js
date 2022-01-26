@@ -7,7 +7,7 @@ function FilterHouse(props) {
   };
   return (
     <>
-      <label htmlFor="house">Selecciona la casa:</label>
+      <label htmlFor="house" className="filter-house">Selecciona la casa:</label>
       <select
         name="house"
         id="house"

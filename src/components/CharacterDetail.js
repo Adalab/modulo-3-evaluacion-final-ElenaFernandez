@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import heart from '../images/heart.png';
 import dead from '../images/dead.png';
-import Icons from '../styles/layout/Icons.scss';
 
 function CharacterDetail(props) {
   console.log(props.data);
@@ -15,15 +14,12 @@ function CharacterDetail(props) {
         return 'Viva';
       } else {
         return 'Vivo';
-        //favicon viva
       }
     } else if (!props.data.alive) {
       if (props.data.gender === 'female') {
         return 'Muerta';
-        //favicon muerta
       } else {
         return 'Muerto';
-        //favicon viva
       }
     }
   };
@@ -44,7 +40,7 @@ function CharacterDetail(props) {
         <button>Volver al inicio</button>
       </Link>
 
-      <section>
+      <section className="container-card">
         <img
           src={
             props.data.image
@@ -53,14 +49,15 @@ function CharacterDetail(props) {
           }
           alt={`Foto de ${props.data.name}`}
           title={`Foto de ${props.data.name}`}
+          className="container-card__image"
         />
         <h4>{props.data.name}</h4>
         <p>
           Estatus: {renderStatus()}
           {props.data.alive ? (
-            <img className="image_heart" src={heart} alt='Vivo' />
+            <img className="image_heart" src={heart} alt="Vivo" />
           ) : (
-            <img className="image_heart" src={dead} alt='Muerto' />
+            <img className="image_heart" src={dead} alt="Muerto" />
           )}
         </p>
         <p>

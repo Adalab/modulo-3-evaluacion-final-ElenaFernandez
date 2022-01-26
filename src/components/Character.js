@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Character(props) {
   return (
-    <>
+    <div className="container-character">
       <Link to={`/character/${props.data.id}`}>
         <img
           className="image"
@@ -13,7 +13,7 @@ function Character(props) {
         <h4>{props.data.name}</h4>
         <p>{props.data.species}</p>
       </Link>
-    </>
+    </div>
   );
 }
 

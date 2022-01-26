@@ -7,12 +7,13 @@ function FilterName(props) {
   };
   return (
     <>
-      <label htmlFor="search">Busca tu personaje favorito:</label>
+      <label htmlFor="search" className="filter-name">Busca tu personaje favorito:</label>
       <input
         type="text"
         placeholder="Ej:Voldemort."
         onChange={handleInput}
         value={props.filterName}
+        className="filter-name__input"
       />
     </>
   );

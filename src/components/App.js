@@ -42,7 +42,8 @@ function App() {
     })
     .filter((character) => {
       return filterGender === 'All' ? true : character.gender === filterGender;
-    });
+    })
+    
 
   const renderCharacter = (props) => {
     const routerId = props.match.params.characterId;
@@ -53,6 +54,11 @@ function App() {
     return <CharacterDetail data={foundCharacter} />;
   };
 
+  const resetBtn = () => {
+    setFilterName('');
+    setFilterHouse('gryffindor');
+    setFilterGender('All');
+  };
   return (
     <div className="appPage">
       <Header />
@@ -65,6 +71,7 @@ function App() {
               handleFilter={handleFilter}
               filterHouse={filterHouse}
               filterGender={filterGender}
+              resetBtn={resetBtn}
             />
           </div>
         </Route>

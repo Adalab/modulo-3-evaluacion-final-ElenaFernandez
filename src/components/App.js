@@ -16,6 +16,8 @@ function App() {
   const [filterName, setFilterName] = useState('');
   //creo una variable estado para filtar por casa
   const [filterHouse, setFilterHouse] = useState('gryffindor');
+  //creo una variable estado para filtar por gender
+  const [filterGender, setFilterGender] = useState('All');
 
   //fecth
   useEffect(() => {
@@ -29,12 +31,18 @@ function App() {
       setFilterName(data.value);
     } else if (data.key === 'house') {
       setFilterHouse(data.value);
+    } else if (data.key === 'gender') {
+      setFilterGender(data.value);
     }
   };
 
-  const filteredCharacter = characterData.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
-  });
+  const filteredCharacter = characterData
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((character) => {
+      return filterGender === 'All' ? true : character.gender === filterGender;
+    });
 
   const renderCharacter = (props) => {
     const routerId = props.match.params.characterId;
@@ -56,6 +64,7 @@ function App() {
               filterName={filterName}
               handleFilter={handleFilter}
               filterHouse={filterHouse}
+              filterGender={filterGender}
             />
           </div>
         </Route>

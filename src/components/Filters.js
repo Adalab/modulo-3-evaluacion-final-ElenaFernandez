@@ -1,3 +1,4 @@
+import FilterByGender from './FilterByGender';
 import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 
@@ -14,6 +15,10 @@ function Filters(props) {
       <FilterHouse
         handleFilter={props.handleFilter}
         filterHouse={props.filterHouse}
+      />
+      <FilterByGender
+        handleFilter={props.handleFilter}
+        filterGender={props.filterGender}
       />
     </form>
   );

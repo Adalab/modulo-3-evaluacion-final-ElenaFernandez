@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import heart from '../images/heart.png';
+import dead from '../images/dead.png';
+import Icons from '../styles/layout/Icons.scss';
 
 function CharacterDetail(props) {
   console.log(props.data);
@@ -8,9 +11,8 @@ function CharacterDetail(props) {
 
   const renderStatus = () => {
     if (props.data.alive) {
-      if (props.data.gender === 'female' ) {
-        return 'Viva'
-        
+      if (props.data.gender === 'female') {
+        return 'Viva';
       } else {
         return 'Vivo';
         //favicon viva
@@ -44,12 +46,23 @@ function CharacterDetail(props) {
 
       <section>
         <img
-          src={props.data.image}
+          src={
+            props.data.image
+              ? props.data.image
+              : 'https://lafrikileria.com/71944-thickbox_default/funko-pop-gigante-harry-potter-y-hedwig-45-cm-xxl.jpg'
+          }
           alt={`Foto de ${props.data.name}`}
           title={`Foto de ${props.data.name}`}
         />
         <h4>{props.data.name}</h4>
-        <p>Estatus: {renderStatus()}{props.data.alive ? <i className="fa-solid fa-heart-pulse"></i> : <i className="fa-duotone fa-skull-crossbones"></i>}</p>
+        <p>
+          Estatus: {renderStatus()}
+          {props.data.alive ? (
+            <img className="image_heart" src={heart} alt='Vivo' />
+          ) : (
+            <img className="image_heart" src={dead} alt='Muerto' />
+          )}
+        </p>
         <p>
           Especie:{' '}
           {props.data.species === 'human' ? 'Humano' : `${renderSpecies()}`}

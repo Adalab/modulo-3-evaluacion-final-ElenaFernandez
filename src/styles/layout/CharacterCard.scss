@@ -1,0 +1,16 @@
+.image {
+  display: block;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.container-character{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: solid 2px purple;
+    &__title{
+        padding: 2px 16px;
+        margin-top: 7px;
+    }
+}

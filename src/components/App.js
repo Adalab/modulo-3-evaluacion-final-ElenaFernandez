@@ -37,12 +37,11 @@ function App() {
   });
 
   const renderCharacter = (props) => {
-    
     const routerId = props.match.params.characterId;
     const foundCharacter = characterData.find(
       (character) => character.id === routerId
     );
-    console.log(foundCharacter)
+    console.log(foundCharacter);
     return <CharacterDetail data={foundCharacter} />;
   };
 

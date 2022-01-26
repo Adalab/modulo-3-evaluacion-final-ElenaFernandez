@@ -1,7 +1,16 @@
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import NotFound from './NotFound';
 
 function Main(props) {
+  const notFound = () => {
+    if (props.character.length > 0) {
+      return <CharacterList character={props.character} />;
+    } else {
+      return <NotFound/>;
+    }
+  };
+
   return (
     <>
       <Filters
@@ -9,7 +18,8 @@ function Main(props) {
         handleFilter={props.handleFilter}
         filterHouse={props.filterHouse}
       />
-      <CharacterList character={props.character} />
+      {notFound()}
+      {/*!<CharacterList character={props.character} />*/}
     </>
   );
 }

@@ -4,6 +4,8 @@ import '../styles/App.scss';
 import callToApi from '../services/api';
 import Header from './Header';
 import Main from './Main';
+import CharacterDetail from './CharacterDetail';
+
 //import ls from '../services/localStorage';
 //import PropTypes from 'prop-types';
 
@@ -34,6 +36,16 @@ function App() {
     return character.name.toLowerCase().includes(filterName.toLowerCase());
   });
 
+  const renderCharacter = (props) => {
+    
+    const routerId = props.match.params.characterId;
+    const foundCharacter = characterData.find(
+      (character) => character.id === routerId
+    );
+    console.log(foundCharacter)
+    return <CharacterDetail data={foundCharacter} />;
+  };
+
   return (
     <div className="appPage">
       <Header />
@@ -48,7 +60,7 @@ function App() {
             />
           </div>
         </Route>
-        <Route path="/character/"></Route>{' '}
+        <Route path="/character/:characterId" render={renderCharacter}></Route>{' '}
       </Switch>
     </div>
   );

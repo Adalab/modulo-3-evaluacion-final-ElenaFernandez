@@ -3,6 +3,7 @@ import Filters from './Filters';
 import NotFound from './NotFound';
 import ResetBtn from './ResetBtn';
 
+
 function Main(props) {
   const notFound = () => {
     if (props.character.length > 0) {

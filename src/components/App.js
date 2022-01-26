@@ -43,6 +43,7 @@ function App() {
     .filter((character) => {
       return filterGender === 'All' ? true : character.gender === filterGender;
     })
+    .sort((a, b) => a.name.localeCompare(b.name));
     
 
   const renderCharacter = (props) => {

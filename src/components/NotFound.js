@@ -1,7 +1,8 @@
+import   '../styles/layout/NotFoundText.scss'
 function NotFound(){
     return(
-        <div>
-            Oops! No se ha encontrado ningun persojane, vuelve a buscar.
+        <div className="text">
+            Oops! No se ha encontrado ningun personaje, vuelve a buscar.
         </div>
     )
 }

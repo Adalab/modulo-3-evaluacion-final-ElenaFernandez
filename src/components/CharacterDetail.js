@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import heart from '../images/heart.png';
 import dead from '../images/dead.png';
+import gryffindor from '../images/gryffindor.jpg';
+import  '../styles/layout/CharacterDetails.scss'
 
 function CharacterDetail(props) {
   console.log(props.data);
@@ -34,10 +36,16 @@ function CharacterDetail(props) {
     }
   };
 
+  const houseImage = () => {
+    if (props.data.house === 'gryffindor') {
+      return <img src={gryffindor} alt="gryffindor" />;
+    }
+  };
+
   return (
     <>
       <Link to="/">
-        <button>Volver al inicio</button>
+        <button className="reset">Volver al inicio</button>
       </Link>
 
       <section className="container-card">
@@ -51,21 +59,26 @@ function CharacterDetail(props) {
           title={`Foto de ${props.data.name}`}
           className="container-card__image"
         />
-        <h4>{props.data.name}</h4>
-        <p>
-          Estatus: {renderStatus()}
-          {props.data.alive ? (
-            <img className="image_heart" src={heart} alt="Vivo" />
-          ) : (
-            <img className="image_heart" src={dead} alt="Muerto" />
-          )}
-        </p>
-        <p>
-          Especie:{' '}
-          {props.data.species === 'human' ? 'Humano' : `${renderSpecies()}`}
-        </p>
-        <p>Género:{getGender()}</p>
-        <p>Casa:{props.data.house}</p>
+        <div classNAme="container-card__info">
+          <h4>{props.data.name}</h4>
+          <p>
+            Estatus: {renderStatus()}
+            {props.data.alive ? (
+              <img className="image_heart" src={heart} alt="Vivo" />
+            ) : (
+              <img className="image_heart" src={dead} alt="Muerto" />
+            )}
+          </p>
+          <p>
+            Especie:{' '}
+            {props.data.species === 'human' ? 'Humano' : `${renderSpecies()}`}
+          </p>
+          <p>Género:{getGender()}</p>
+          <p>
+            Casa:{props.data.house}
+            {houseImage()}
+          </p>
+        </div>
       </section>
     </>
   );

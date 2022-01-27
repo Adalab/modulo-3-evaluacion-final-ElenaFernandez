@@ -5,15 +5,14 @@
   object-position: top;
 }
 
-.container-character{
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: solid 2px purple;
-    &__title{
-        padding: 2px 16px;
-        margin-top: 7px;
-        color:purple;
-        text-decoration: none;
-        text-decoration-style: none;
-    }
+.container-character {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: solid 2px purple;
+  &__title {
+    padding: 2px 16px;
+    margin-top: 7px;
+    color: purple;
+  }
 }
+

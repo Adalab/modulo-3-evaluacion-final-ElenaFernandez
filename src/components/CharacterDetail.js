@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import heart from '../images/heart.png';
 import dead from '../images/dead.png';
-import gryffindor from '../images/gryffindor.jpg';
+import humano from '../images/humano.png';
+import alien from '../images/alien.png';
 import '../styles/layout/CharacterDetails.scss';
 import Footer from './Footer';
 
@@ -34,51 +35,50 @@ function CharacterDetail(props) {
       return 'Hombre-lobo';
     } else if (props.data.species === 'ghost') {
       return 'Fantasma';
-    }
-  };
-
-  const houseImage = () => {
-    if (props.data.house === 'gryffindor') {
-      return <img src={gryffindor} alt="gryffindor" />;
+    } else if (props.data.species === 'human') {
+      return 'Humano';
     }
   };
 
   return (
     <>
       <Link to="/">
-        <button className="reset">Volver al inicio</button>
+        <button className="btn-back">Volver al inicio</button>
       </Link>
 
       <div className="container-card">
-        <img
-          src={
-            props.data.image
-              ? props.data.image
-              : 'https://lafrikileria.com/71944-thickbox_default/funko-pop-gigante-harry-potter-y-hedwig-45-cm-xxl.jpg'
-          }
-          alt={`Foto de ${props.data.name}`}
-          title={`Foto de ${props.data.name}`}
-          className="container-card__image"
-        />
-        <div className="container-card__info">
-          <h4>{props.data.name}</h4>
-          <p>
-            Estatus: {renderStatus()}
-            {props.data.alive ? (
-              <img className="icon" src={heart} alt="Vivo" />
-            ) : (
-              <img className="icon" src={dead} alt="Muerto" />
-            )}
-          </p>
-          <p>
-            Especie:{' '}
-            {props.data.species === 'human' ? 'Humano' : `${renderSpecies()}`}
-          </p>
-          <p>Género:{getGender()}</p>
-          <p>
-            Casa:{props.data.house}
-            {houseImage()}
-          </p>
+        <div className="wrapped">
+          <img
+            src={
+              props.data.image
+                ? props.data.image
+                : 'https://lafrikileria.com/71944-thickbox_default/funko-pop-gigante-harry-potter-y-hedwig-45-cm-xxl.jpg'
+            }
+            alt={`Foto de ${props.data.name}`}
+            title={`Foto de ${props.data.name}`}
+            className="container-card__image"
+          />
+          <div className="container-card__info">
+            <h4>{props.data.name}</h4>
+            <p>
+              Estatus: {renderStatus()}
+              {props.data.alive ? (
+                <img className="icon" src={heart} alt="Vivo" />
+              ) : (
+                <img className="icon" src={dead} alt="Muerto" />
+              )}
+            </p>
+            <p>
+              Especie: {renderSpecies()}{' '}
+              {props.data.species === 'human' ? (
+                <img src={humano} alt="humano" />
+              ) : (
+                <img src={alien} alt="alien" />
+              )}
+            </p>
+            <p>Género: {getGender()}</p>
+            <p>Casa: {props.data.house}</p>
+          </div>
         </div>
       </div>
       <Footer />

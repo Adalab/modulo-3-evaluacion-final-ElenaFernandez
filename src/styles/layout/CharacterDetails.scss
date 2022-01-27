@@ -1,12 +1,11 @@
 .container-card {
   display: flex;
   flex-direction: column;
-  
-
   align-items: center;
+  margin-top: 10px;
   &__info {
     padding-top: 10px;
-   text-decoration-style: none;
+    font-size: 18px;
   }
   &__image {
     display: block;
@@ -15,7 +14,22 @@
     object-position: top;
   }
 }
+
+.wrapped {
+  border: solid 2px purple;
+  border-radius: 5px;
+  text-align: center;
+}
 .icon {
   width: 30px;
   height: 30px;
+}
+
+.btn-back {
+  border: solid 2px purple;
+  color: pink;
+  background-color: purple;
+  width: 180px;
+  border-radius: 10px;
+  margin-left: 100px;
 }

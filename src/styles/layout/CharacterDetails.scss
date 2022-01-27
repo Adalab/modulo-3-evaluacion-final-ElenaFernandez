@@ -1,14 +1,12 @@
 .container-card {
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: solid 2px purple;
-  width: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  
+
   align-items: center;
   &__info {
     padding-top: 10px;
+   text-decoration-style: none;
   }
   &__image {
     display: block;
@@ -17,7 +15,7 @@
     object-position: top;
   }
 }
-.image-heart{
-    width: 30px;
-    height: 30px;
+.icon {
+  width: 30px;
+  height: 30px;
 }

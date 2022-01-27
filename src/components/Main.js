@@ -1,7 +1,7 @@
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import NotFound from './NotFound';
-import ResetBtn from './ResetBtn';
+
 
 
 function Main(props) {
@@ -19,8 +19,10 @@ function Main(props) {
         filterName={props.filterName}
         handleFilter={props.handleFilter}
         filterHouse={props.filterHouse}
+        filterGender={props.filterGender}
+        resetBtn={props.resetBtn}
       />
-      <ResetBtn resetBtn={props.resetBtn}/>
+    
       {notFound()}
       
       {/*!<CharacterList character={props.character} />*/}

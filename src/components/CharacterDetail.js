@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import heart from '../images/heart.png';
 import dead from '../images/dead.png';
 import gryffindor from '../images/gryffindor.jpg';
-import  '../styles/layout/CharacterDetails.scss'
+import '../styles/layout/CharacterDetails.scss';
+import Footer from './Footer';
 
 function CharacterDetail(props) {
   console.log(props.data);
@@ -48,7 +49,7 @@ function CharacterDetail(props) {
         <button className="reset">Volver al inicio</button>
       </Link>
 
-      <section className="container-card">
+      <div className="container-card">
         <img
           src={
             props.data.image
@@ -59,14 +60,14 @@ function CharacterDetail(props) {
           title={`Foto de ${props.data.name}`}
           className="container-card__image"
         />
-        <div classNAme="container-card__info">
+        <div className="container-card__info">
           <h4>{props.data.name}</h4>
           <p>
             Estatus: {renderStatus()}
             {props.data.alive ? (
-              <img className="image_heart" src={heart} alt="Vivo" />
+              <img className="icon" src={heart} alt="Vivo" />
             ) : (
-              <img className="image_heart" src={dead} alt="Muerto" />
+              <img className="icon" src={dead} alt="Muerto" />
             )}
           </p>
           <p>
@@ -79,7 +80,8 @@ function CharacterDetail(props) {
             {houseImage()}
           </p>
         </div>
-      </section>
+      </div>
+      <Footer />
     </>
   );
 }

@@ -4,7 +4,7 @@ function ResetBtn(props) {
     props.resetBtn();
   };
 
-  return <button onClick={handleBtn}>Reset</button>;
+  return <button onClick={handleBtn} className="btn-reset">Reset</button>;
 };
 
 export default ResetBtn;

@@ -1,7 +1,8 @@
 import FilterByGender from './FilterByGender';
 import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
-import Filter from '../styles/layout/Filter.scss';
+import ResetBtn from './ResetBtn';
+import '../styles/layout/Filter.scss';
 
 
 
@@ -25,6 +26,7 @@ function Filters(props) {
           handleFilter={props.handleFilter}
           filterGender={props.filterGender}
         />
+          <ResetBtn resetBtn={props.resetBtn}/>
         
       </form>
     </div>

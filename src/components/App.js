@@ -51,7 +51,7 @@ function App() {
     const foundCharacter = characterData.find(
       (character) => character.id === routerId
     );
-    console.log(foundCharacter);
+    
     return <CharacterDetail data={foundCharacter} />;
   };
 

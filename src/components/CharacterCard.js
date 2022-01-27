@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import '../styles/layout/CharacterCard.scss';
+import '../styles/layout/CharacterCards.scss';
 
-function Character(props) {
+function CharacterCard(props) {
   return (
     <div className="container-character">
       <Link to={`/character/${props.data.id}`}>
@@ -24,4 +24,4 @@ function Character(props) {
   );
 }
 
-export default Character;
+export default CharacterCard;

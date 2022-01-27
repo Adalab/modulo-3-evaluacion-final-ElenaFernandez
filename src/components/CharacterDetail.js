@@ -78,6 +78,7 @@ function CharacterDetail(props) {
             </p>
             <p>Género: {getGender()}</p>
             <p>Casa: {props.data.house}</p>
+            <p> Nombre Alternativo: {props.data.alternative_name.length === 0 ? 'No tiene' : props.data.alternative_name}</p>
           </div>
         </div>
       </div>

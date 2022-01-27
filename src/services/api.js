@@ -14,6 +14,7 @@ const callToApi = (filterHouse) => {
           gender: character.gender,
           alive: character.alive,
           image: character.image,
+          alternative_name: character.alternate_names
           
         };
       });

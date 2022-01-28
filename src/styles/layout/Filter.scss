@@ -9,6 +9,7 @@
     border-radius: 5px;
   }
 }
+
 .filter-gender {
   margin-left: 5px;
   margin-right: 3px;
@@ -29,4 +30,10 @@
   color: pink;
   background-color: purple;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .container-form {
+    width: 500px;
+    flex-direction: column;
+  }
 }

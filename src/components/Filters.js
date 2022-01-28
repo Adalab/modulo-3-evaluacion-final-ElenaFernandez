@@ -3,8 +3,7 @@ import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 import ResetBtn from './ResetBtn';
 import '../styles/layout/Filter.scss';
-
-
+import FilterSpecies from './FilterSpecies';
 
 function Filters(props) {
   const handleSubmit = (event) => {
@@ -16,7 +15,6 @@ function Filters(props) {
         <FilterName
           handleFilter={props.handleFilter}
           filterName={props.filterName}
-          
         />
         <FilterHouse
           handleFilter={props.handleFilter}
@@ -26,8 +24,11 @@ function Filters(props) {
           handleFilter={props.handleFilter}
           filterGender={props.filterGender}
         />
-          <ResetBtn resetBtn={props.resetBtn}/>
-        
+        <FilterSpecies
+          handleFilter={props.handleFilter}
+          filterSpecies={props.filterSpecies}
+        />
+        <ResetBtn resetBtn={props.resetBtn} />
       </form>
     </div>
   );

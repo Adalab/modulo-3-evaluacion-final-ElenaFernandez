@@ -18,6 +18,7 @@ function App() {
   const [filterHouse, setFilterHouse] = useState('gryffindor');
   //creo una variable estado para filtar por gender
   const [filterGender, setFilterGender] = useState('All');
+  const [filterSpecies,setFilterSpecies]= useState ('');
 
   //fecth
   useEffect(() => {
@@ -33,6 +34,8 @@ function App() {
       setFilterHouse(data.value);
     } else if (data.key === 'gender') {
       setFilterGender(data.value);
+    } else if(data.key=== 'species'){
+      setFilterSpecies(data.value)
     }
   };
 
@@ -43,7 +46,10 @@ function App() {
     .filter((character) => {
       return filterGender === 'All' ? true : character.gender === filterGender;
     })
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .filter((character)=> {
+      return character.species.toLowerCase().includes(filterSpecies.toLowerCase())
+    })
     
 
   const renderCharacter = (props) => {
@@ -59,6 +65,7 @@ function App() {
     setFilterName('');
     setFilterHouse('gryffindor');
     setFilterGender('All');
+    setFilterSpecies('');
   };
   return (
     <div className="appPage">
@@ -73,6 +80,7 @@ function App() {
               filterHouse={filterHouse}
               filterGender={filterGender}
               resetBtn={resetBtn}
+              filterSpecies={filterSpecies}
             />
           </div>
         </Route>
